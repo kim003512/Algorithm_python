@@ -1,0 +1,1 @@
+point = list(map(int, input().split()))
