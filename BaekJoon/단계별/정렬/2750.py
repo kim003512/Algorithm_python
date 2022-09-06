@@ -4,10 +4,10 @@ numList = [int(input()) for _ in range(n)]
 # numList.sort()
 
 #버블 정렬
-# for i in range(len(numList)) :
-#     for j in range(len(numList)) :
-#         if numList[i] < numList[j] :
-#              numList[i], numList[j] = numList[j], numList[i]
+for i in range(len(numList)) :
+    for j in range(len(numList)) :
+        if numList[i] < numList[j] :
+             numList[i], numList[j] = numList[j], numList[i]
 
 #삽입정렬
 for i in range(1, len(numList)) :

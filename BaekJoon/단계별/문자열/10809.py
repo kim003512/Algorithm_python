@@ -1,7 +1,4 @@
-inputStr = input()
-
-def listAlphabet() :
-    return list(string.ascii_lowercase)
-
-
-print(listAlphabet())
+string = input()
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+for i in alphabet:
+    print(string.find(i), end = ' ')
