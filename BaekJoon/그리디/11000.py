@@ -26,18 +26,14 @@ lessons.sort()
 
 lessons_queue = []
 heapq.heappush(lessons_queue, lessons[0][1]) #첫번째 강의가 끝나는 시간을 우선순위 큐에 추가
-print('첫번째 queue', lessons_queue)
 
 for i in range(1, n) :
-    if lessons[i][0] < lessons_queue[0] :
-        heapq.heappush(lessons_queue, lessons[i][1]) 
-        print('두번째 queue', lessons_queue)
+    if lessons[i][0] < lessons_queue[0] : # 현재 회의실 끝나는 시간보다 다음 회의 시작시간이 빠르면
+        heapq.heappush(lessons_queue, lessons[i][1]) #새로운 회의실 개설
 
-    else :
-        heapq.heappop(lessons_queue)
+    else : # 현재 회의실에 이어서 회의 개최 가능
+        heapq.heappop(lessons_queue) #새로운 회의로 시간 변경을 위해 pop 후 새 시간 push
         heapq.heappush(lessons_queue, lessons[i][1])
-        print('세번째 queue', lessons_queue)
-
 
 print(len(lessons_queue))
 
